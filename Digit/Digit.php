@@ -51,6 +51,11 @@ class Digit {
     public function encode($num) {
         $hash  = '';
         $digit = 0;
+        $num   = intval($num);
+
+        if (empty($num)) {
+            return $this->_map[0];
+        }
 
         do {
             $order = floor($num / pow($this->_len, $digit));
